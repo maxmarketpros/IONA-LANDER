@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Phone, Mail, MapPin, Loader2, CheckCircle2 } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import Link from "next/link"
@@ -184,22 +183,22 @@ export function Contact() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="projectType">Project Type *</Label>
-                    <Select name="projectType">
-                      <SelectTrigger
-                        id="projectType"
-                        className={errors.projectType ? "border-red-500" : ""}
-                        aria-describedby={errors.projectType ? "projectType-error" : undefined}
-                      >
-                        <SelectValue placeholder="Select a project type" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {projectTypes.map((type) => (
-                          <SelectItem key={type} value={type}>
-                            {type}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                    <select
+                      id="projectType"
+                      name="projectType"
+                      defaultValue=""
+                      className={`flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${errors.projectType ? "border-red-500" : ""}`}
+                      aria-describedby={errors.projectType ? "projectType-error" : undefined}
+                    >
+                      <option value="" disabled>
+                        Select a project type
+                      </option>
+                      {projectTypes.map((type) => (
+                        <option key={type} value={type}>
+                          {type}
+                        </option>
+                      ))}
+                    </select>
                     {errors.projectType && (
                       <p id="projectType-error" className="text-sm text-red-500">
                         {errors.projectType}
