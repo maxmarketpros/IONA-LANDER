@@ -70,7 +70,7 @@ export function Contact() {
         formObject[key] = value.toString()
       })
 
-      await fetch("/", {
+      await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact", ...formObject }),
@@ -120,6 +120,7 @@ export function Contact() {
                 className="space-y-6"
                 name="contact"
                 method="POST"
+                action="/__forms.html"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
               >
