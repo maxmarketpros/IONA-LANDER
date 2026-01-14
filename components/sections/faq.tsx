@@ -199,7 +199,7 @@ const faqs = [
 export function FAQ() {
   return (
     <section id="faq" className="py-20 bg-muted scroll-mt-20">
-      <div className="container mx-auto px-4 max-w-3xl">
+      <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-14">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
             IOHI Frequently Asked Questions (FAQ)
@@ -207,7 +207,7 @@ export function FAQ() {
           <p className="mt-4 text-muted-foreground">Answers to common questions about working with us.</p>
         </div>
 
-        <Accordion type="single" collapsible className="grid gap-4 md:grid-cols-2">
+        <Accordion type="single" collapsible className="grid gap-4 md:grid-cols-3">
           {faqs.map((faq, index) => (
             <AccordionItem
               key={index}
