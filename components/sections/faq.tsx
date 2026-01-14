@@ -207,7 +207,7 @@ export function FAQ() {
           <p className="mt-4 text-muted-foreground">Answers to common questions about working with us.</p>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-4">
+        <Accordion type="single" collapsible className="grid gap-4 md:grid-cols-2">
           {faqs.map((faq, index) => (
             <AccordionItem
               key={index}
